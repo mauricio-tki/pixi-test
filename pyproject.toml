@@ -1,0 +1,10 @@
+[project]
+name = "pixi-test"
+dependencies = ["numpy"]                               
+requires-python = ">= 3.12"
+scripts = { pixi-test-main = "pixi_test:pixi_test" } 
+version = "0.1.0"
+
+[build-system] 
+build-backend = "hatchling.build"
+requires = ["hatchling"]

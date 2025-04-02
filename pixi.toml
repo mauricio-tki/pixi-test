@@ -1,0 +1,27 @@
+[workspace]
+authors = ["Mauricio van den Berg <mauricio.vandenberg@telethonkids.org.au>"]
+preview = ["pixi-build"]
+channels = [
+  "https://prefix.dev/pixi-build-backends",
+  "conda-forge",
+]
+name = "pixi-test"
+version = "0.1.0"
+platforms = ["linux-64"]
+
+[tasks]
+start = "python -m pixi_test.pixi_test"
+
+[dependencies]
+python = ">=3.12"
+numpy = ">=2.2.4,<3"
+
+[package.host-dependencies]
+hatchling = "*"
+
+[package.build]
+backend = { name = "pixi-build-python", version = "0.1.*" }
+channels = [
+  "https://prefix.dev/pixi-build-backends",
+  "conda-forge",
+]
